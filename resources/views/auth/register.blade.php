@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@include('layouts.sidebar')
+@include('layouts.sidebaradmin')
 @section('content')
 <html>
 
