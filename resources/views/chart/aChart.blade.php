@@ -19,7 +19,7 @@
     function drawChart() {
       var data1 = google.visualization.arrayToDataTable([
         ['Ket', 'Jumlah Anak'],
-        <?php echo $data ?>
+        <?php echo $chartData ?>
       ]);
 
       var options = {
@@ -34,6 +34,7 @@
 </head>
 
 <body>
+<h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
   <div class="col-4 my-3">
     <h1>Grafik Data Anak</h1>
   </div>

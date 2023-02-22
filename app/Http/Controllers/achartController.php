@@ -28,16 +28,19 @@ class achartController extends Controller
      */
     public function aChart()
     {
-        $result = DB::select(DB::raw("select count(*) as totket, ket_bb from anak GROUP BY ket_bb;"));
+        $result = DB::table('anak')
+             ->select(DB::raw('count(*) as totket, ket_bb'))
+             ->groupBy('ket_bb')
+             ->get();
         $data1 = "";
         foreach($result as $val){
             $data1.="['".$val->ket_bb."',     ".$val->totket. "],";
         }
-        $arr['data'] = rtrim($data1,",");
+        $chartData = $data1;
         if(Auth()->user()->role == User::ROLE_ADMIN){
-            return view('chart.adminChart.aChartadmin', $arr);
+            return view('chart.adminChart.aChartadmin', compact('chartData'));
         }else{
-            return view('chart.aChart', $arr);
+            return view('chart.aChart', compact('chartData'));
         }
     }
     // {

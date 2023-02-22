@@ -29,20 +29,22 @@ class chartController extends Controller
      */
     public function xChart()
     {
-        
-        $result = DB::select(DB::raw("select count(*) as totket, ket_tb from anak GROUP BY ket_tb;"));
+
+
+        $result = DB::table('anak')
+            ->select(DB::raw('count(*) as totket, ket_tb'))
+            ->groupBy('ket_tb')
+            ->get();
         $data1 = "";
-        foreach($result as $val){
-            $data1.="['".$val->ket_tb."',     ".$val->totket. "],";
+        foreach ($result as $val) {
+            $data1 .= "['" . $val->ket_tb . "',     " . $val->totket . "],";
         }
-        $arr['data'] = rtrim($data1,",");
-        if(Auth()->user()->role == User::ROLE_ADMIN){
-            return view('chart.adminChart.xChartadmin', $arr);
-        }else{
-            return view('chart.xChart', $arr);
+        $chartData = $data1;
+        if (Auth()->user()->role == User::ROLE_ADMIN) {
+            return view('chart.adminChart.xChartadmin', compact('chartData'));
+        } else {
+            return view('chart.xChart', compact('chartData'));
         }
-    
-        
     }
     // {
     //     $result = DB::select(DB::raw("select count(*) as total_ket, ket from anak GROUP BY ket;"));

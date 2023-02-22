@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
     {{-- pemberitahuan jika data tidak ditemukan --}}
 
     @if ($data_anak->count() > 0)
@@ -20,7 +21,9 @@
     <center>
         <div class="alert alert-warning" role="alert">
             <h5>Tidak ditemukan data yang sesuai dengan kata kunci!!</h5>
-
+            <form action="/anak">
+        <button type="submit" class="btn btn-primary mt-4">Back</button>
+        </form>
     </center>
     @endif
     </div>
@@ -80,7 +83,7 @@
             <div class="col-3 my-4" allign="right">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-sm
-float-right" data-toggle="modal" data-target="#exampleModal">
+float-left" data-toggle="modal" data-target="#exampleModal">
                     Tambah Data
                 </button>
             </div>

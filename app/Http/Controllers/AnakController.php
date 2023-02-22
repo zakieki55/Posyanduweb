@@ -17,6 +17,10 @@ class AnakController extends Controller
         if ($request->has('cari')) {
             $data_anak = $data_anak->where('nama', 'LIKE', '%' . $request->cari . '%');
         }
+        
+        if ($request->has('kelurahan')) {
+            $data_anak = $data_anak->where('kelurahan', $request->kelurahan);
+        }
 
         if ($request->has('kecamatan')) {
             $data_anak = $data_anak->where('kecamatan', $request->kecamatan);
