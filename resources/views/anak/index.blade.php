@@ -22,8 +22,8 @@
         <div class="alert alert-warning" role="alert">
             <h5>Tidak ditemukan data yang sesuai dengan kata kunci!!</h5>
             <form action="/anak">
-        <button type="submit" class="btn btn-primary mt-4">Back</button>
-        </form>
+                <button type="submit" class="btn btn-primary mt-4">Back</button>
+            </form>
     </center>
     @endif
     </div>
@@ -153,9 +153,10 @@ float-left" data-toggle="modal" data-target="#exampleModal">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tambah Data Anak</h5>
-                    <button type="button" class="close" datadismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+                    
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('add.anak') }}" method="POST">

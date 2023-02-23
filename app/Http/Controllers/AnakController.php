@@ -79,6 +79,12 @@ class AnakController extends Controller
             ->where('nik', 'like', "%" . $cari . "%")
             ->paginate();
 
-        return view('anak.index', ['data_anak' => $data_anak]);
+            if ($request->user()->role == User::ROLE_ADMIN) {
+                return view('anak.index', ['data_anak' => $data_anak]);
+            } elseif ($request->user()->role == User::ROLE_SUPERUSER) {
+                return view('anak.superuser', ['data_anak' => $data_anak]);
+            } else {
+                return view('anak.user', ['data_anak' => $data_anak]);
+            }
     }
 }
