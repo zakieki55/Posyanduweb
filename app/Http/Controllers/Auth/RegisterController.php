@@ -33,14 +33,13 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::REGISTER;
 
-
+   
     /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -59,23 +58,19 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {
-        $user = User::create([
-            'name' => $data['name'],
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'role' => $data['role'],
-        ]);
+{
+    $user = User::create([
+        'name' => $data['name'],
+        'username' => $data['username'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
+        'role' => $data['role'],
+    ]);
 
-        // add success message to the session
-        Session::flash('success', 'Registration successful!');
+    // add success message to the session
+    Session::flash('success', 'Tambah Akun Pengguna Berhasil!');
 
-        return $user;
-    }
-    protected function registered(Request $request, $user)
-    {
-        Session::flash('success', 'Tambah Data Pengguna Berhasil');
-        return redirect($this->redirectPath());
-    }
+    return $user;
+}
+    
 }

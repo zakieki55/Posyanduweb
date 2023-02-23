@@ -17,32 +17,46 @@
     google.charts.setOnLoadCallback(piechart);
 
     function drawChart() {
-      var data1 = google.visualization.arrayToDataTable([
-        ['Ket', 'Jumlah Anak'],
-        <?php echo $chartData ?>
-      ]);
+  var data1 = google.visualization.arrayToDataTable([
+    ['Ket', 'Jumlah Anak'],
+    <?php echo $chartData ?>
+  ]);
 
-      var options = {
-        title: 'Lingkar Kepala',
-        is3D: true,
-      };
+  // Calculate total
+  var total = 0;
+  for (var i = 0; i < data1.getNumberOfRows(); i++) {
+    total += data1.getValue(i, 1);
+  }
 
-      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-      chart.draw(data1, options);
-    }
+  var options = {
+    title: 'Lingkar Kepala',
+    is3D: true,
+    // Add data label for total
+    pieSliceText: 'value',
+    pieSliceTextStyle: {
+      fontSize: 12,
+      bold: true,
+      color: 'white'
+    },
+    pieSliceBorderColor: 'white',
+    pieSliceText: total.toFixed(2).toString()
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+  chart.draw(data1, options);
+}
+
   </script>
 </head>
 
 <body>
-<h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
-  <div class="col-4 my-3">
-    <h1>Grafik Data Anak</h1>
-  </div>
-  <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  <button style="margin-left:16px" onClick="window.location.href='http://127.0.0.1:8000/achart';">
+<h1 style="margin-left:750px">Data Anak Posyandu Kabupaten Bantul</h1>
+<h1 style="margin-left:950px">Grafik Data Anak</h1>
+  <div id="piechart_3d" style="width: 900px; height: 500px; margin-left:600px"></div>
+  <button style="margin-left:616px" onClick="window.location.href='http://127.0.0.1:8000/achart';">
     Chart Berat Badan
   </button>
-  <button style="margin-left:550px" onClick="window.location.href='http://127.0.0.1:8000/xchart';">
+  <button style="margin-left:590px" onClick="window.location.href='http://127.0.0.1:8000/xchart';">
     Chart Tinggi Badan
   </button>
 </body>

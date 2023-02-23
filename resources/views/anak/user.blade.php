@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
+<h1 style="margin-left:750px">Data Anak Posyandu Kabupaten Bantul</h1>
     {{-- pemberitahuan jika data tidak ditemukan --}}
 
     @if ($data_anak->count() > 0)
@@ -91,7 +91,7 @@
                             <th>Nama</th>
                             <th>Jenis Kelamin</th>
                             <th>NIK</th>
-                            <th>Usia</th>
+                            <th>Usia (Bulan)</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
                             <th>Kelurahan</th>
@@ -139,93 +139,6 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Data Anak</h5>
-                    <button type="button" class="close" datadismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('add.anak') }}" method="POST">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Nama</label>
-                            <input name="nama" class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Jenis Kelamin (L/P)</label>
-                            <input name="jenis_kelamin" class="form-control" id="jenis_kelamin" rows="2"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">NIK</label>
-                            <input name="nik" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Usia</label>
-                            <input name="usia" class="form-control" id="exampleFormControlTextarea1" rows="4"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Tanggal Lahir</label>
-                            <input type="date" name="tgl_lahir" class="form-control" id="exampleFormControlTextarea1" rows="5"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Alamat</label>
-                            <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Kelurahan</label>
-                            <input name="kelurahan" class="form-control" id="exampleFormControlTextarea1" rows="7"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Kecamatan</label>
-                            <input name="kecamatan" class="form-control" id="exampleFormControlTextarea1" rows="8"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Pedusunan</label>
-                            <input name="pedusunan" class="form-control" id="exampleFormControlTextarea1" rows="9"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Tinggi</label>
-                            <input name="tinggi" class="form-control" id="exampleFormControlTextarea1" rows="10"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Berat Badan</label>
-                            <input name="berat" class="form-control" id="exampleFormControlTextarea1" rows="11"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Lingkar Kepala</label>
-                            <input name="lingkar_kepala" class="form-control" id="exampleFormControlTextarea1" rows="12"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Tgl Pemeriksaan</label>
-                            <input type="date" name="tanggal" class="form-control" id="exampleFormControlTextarea1" rows="13"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Ket Lingkar Kepala</label>
-                            <input name="ket" class="form-control" id="exampleFormControlTextarea1" rows="14"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Ket Tinggi Badan</label>
-                            <input name="ket_tb" class="form-control" id="exampleFormControlTextarea1" rows="15"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Ket Berat Badan</label>
-                            <input name="ket_bb" class="form-control" id="exampleFormControlTextarea1" rows="16"></input>
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btnprimary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">

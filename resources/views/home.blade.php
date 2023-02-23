@@ -4,7 +4,7 @@
 
 
 @section('content')
-<h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
+<h1 style="margin-left:750px">Data Anak Posyandu Kabupaten Bantul</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

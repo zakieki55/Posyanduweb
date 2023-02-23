@@ -42,6 +42,8 @@ class achartController extends Controller
         }else{
             return view('chart.aChart', compact('chartData'));
         }
+
+        
     }
     // {
     //     $result = DB::select(DB::raw("select count(*) as total_ket, ket from anak GROUP BY ket;"));

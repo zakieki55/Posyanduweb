@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
+    <h1 style="margin-left:750px">Data Anak Posyandu Kabupaten Bantul</h1>
     {{-- pemberitahuan jika data tidak ditemukan --}}
 
     @if ($data_anak->count() > 0)
@@ -97,7 +97,7 @@ float-left" data-toggle="modal" data-target="#exampleModal">
                             <th>Nama</th>
                             <th>Jenis Kelamin</th>
                             <th>NIK</th>
-                            <th>Usia</th>
+                            <th>Usia (Bulan)</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
                             <th>Kelurahan</th>

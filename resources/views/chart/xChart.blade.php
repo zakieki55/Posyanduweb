@@ -34,15 +34,13 @@
 </head>
 
 <body>
-<h1 style="margin-left:100px">Data Anak Posyandu Kabupaten Bantul</h1>
-  <div class="col-4 my-3">
-    <h1>Grafik Data Anak</h1>
-  </div>
-  <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  <button style="margin-left:16px" onClick="window.location.href='http://127.0.0.1:8000/echart';">
+<h1 style="margin-left:750px">Data Anak Posyandu Kabupaten Bantul</h1>
+<h1 style="margin-left:950px">Grafik Data Anak</h1>
+  <div id="piechart_3d" style="width: 900px; height: 500px; margin-left:600px"></div>
+  <button style="margin-left:616px" onClick="window.location.href='http://127.0.0.1:8000/echart';">
     Chart Lingkar Kepala
   </button>
-  <button style="margin-left:550px" onClick="window.location.href='http://127.0.0.1:8000/achart';">
+  <button style="margin-left:590px" onClick="window.location.href='http://127.0.0.1:8000/achart';">
     Chart Berat Badan
   </button>
 </body>
